@@ -1,13 +1,14 @@
 
 const { Router } = require("express");
-const JobApplicant = require("../routes/jobApplicant");
+const JobApplicant = require("../models/jobApplicant");
 
 const router = new Router();
 
-router.post("/test", async (request, response, next) => {
+router.post("/", async (request, response, next) => {
   try {
     console.log("\n---\ntest\n---\n");
-    response.send("This is a test");
+    console.log(JobApplicant)
+    response.json(JobApplicant.findAll());
   } catch (error) {
     next(error);
   }
