@@ -1,7 +1,7 @@
 const db = require("../db");
 const Sequelize = require("sequelize");
 
-const Company = db.define("companies", {
+const Company = db.define("company", {
   adress: {
     type: Sequelize.TEXT,
     allowNull: false
@@ -13,7 +13,7 @@ const Company = db.define("companies", {
   contactPerson: {
     type: Sequelize.TEXT,
     allowNull: false
-  }, 
+  },
   contactPersonMail: {
     type: Sequelize.TEXT,
     allowNull: false

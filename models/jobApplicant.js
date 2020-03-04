@@ -1,7 +1,7 @@
 const db = require("../db");
 const Sequelize = require("sequelize");
 
-const JobApplicant = db.define("job applicant", {
+const JobApplicant = db.define("job_applicant", {
   fullName: {
     type: Sequelize.STRING,
     allowNull: false
@@ -19,4 +19,6 @@ const JobApplicant = db.define("job applicant", {
     allowNull: false
   }
 });
+
+
 module.exports = JobApplicant;
