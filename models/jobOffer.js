@@ -19,10 +19,11 @@ const JobOffer = db.define("job_offer", {
 
 JobOffer.hasMany(JobApplication);
 JobOffer.belongsTo(Company);
-JobApplicant.belongsToMany(JobOffer, { through: JobApplication });
+
 JobOffer.belongsToMany(JobApplicant, { through: JobApplication })
+JobApplicant.belongsToMany(JobOffer, { through: JobApplication });
+
 Company.hasMany(JobOffer);
-// JobApplication.hasMany(JobApplicant);JobApplication
 JobApplication.belongsTo(JobOffer);
 
 module.exports = JobOffer;
