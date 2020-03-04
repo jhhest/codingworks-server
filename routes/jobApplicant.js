@@ -1,6 +1,6 @@
 
 const { Router } = require("express");
-const JobApplicant = require("../models/");
+const JobApplicant = require("../routes/jobApplicant");
 
 const router = new Router();
 
