@@ -34,7 +34,7 @@ router.post("/login", async (request, response, next) => {
         });
       } else {
         response.status(400).send({
-          message: "Password is not correct. "
+          message: "Password is not correct."
         });
       }
     }
