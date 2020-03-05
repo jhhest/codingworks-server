@@ -18,6 +18,10 @@ const JobApplicant = db.define("job_applicant", {
   adress: {
     type: Sequelize.TEXT,
     allowNull: false
+  },
+  password: {
+    type: Sequelize.TEXT,
+    allowNull: false
   }
 });
 
