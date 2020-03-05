@@ -8,13 +8,14 @@ const JobApplicantRouter = require("./routes/jobApplicant");
 const JobOfferRouter = require("./routes/jobOffer");
 const companyRouter = require("./models/company");
 const jobApplicationRouter = require("./models/jobApplication");
+
+// middleware
+const app = express();
+app.use(cors(), express.json());
+
 /**
  * endpoints
  */
-const app = express();
-// middleware
-app.use(cors(), express.json());
-
 app.use("/company", companyRouter);
 app.use("/jobapplicant", JobApplicantRouter);
 app.use("/jobapplication", jobApplicationRouter);

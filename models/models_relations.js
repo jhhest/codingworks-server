@@ -18,3 +18,7 @@ JobApplicant.belongsToMany(JobOffer, { through: JobApplication });
 
 Company.hasMany(JobOffer);
 JobApplication.belongsTo(JobOffer);
+
+JobApplicant.create({ fullName: "Jan van Hest", dateOfBirth: "1984-02-15", mail: "janvanhest@outlook.com", adress: "Abeelstraat 27 Groesbeek", })
+JobApplicant.create({ fullName: "Jend HordeJan", dateOfBirth: "1980-01-16", mail: "jend@outlook.com", adress: "Kroonstraat 25 utrecht", })
+JobApplicant.create({ fullName: "Thierry Dekelver", dateOfBirth: "1979-12-28", mail: "jend@outlook.com", adress: "Kroonstraat 25 utrecht", })

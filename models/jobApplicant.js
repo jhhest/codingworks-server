@@ -12,7 +12,8 @@ const JobApplicant = db.define("job_applicant", {
   },
   mail: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
+    unique: true
   },
   adress: {
     type: Sequelize.TEXT,
