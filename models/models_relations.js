@@ -2,19 +2,28 @@
  * Importing  models
  */
 
-const Company = require("../models/company");
+const CompanyAccount = require("../models/companyAccount");
 const JobOffer = require("../models/jobOffer");
-const JobApplicant = require("../models/jobApplicant");
+const JobApplicantAccount = require("../models/jobApplicantAccount");
 const JobApplication = require("../models/jobApplication");
+const TechnologiesInAccount = require("../models/technologiesInAccount");
+const Technologies = require("../models/technologies");
+const User = require("../models/user");
 /**
  * Making relations between models
  */
 
 JobOffer.hasMany(JobApplication);
-JobOffer.belongsTo(Company);
+JobOffer.belongsTo(CompanyAccount);
+JobOffer.hasMany(TechnologiesInAccount);
 
-JobOffer.belongsToMany(JobApplicant, { through: JobApplication });
-JobApplicant.belongsToMany(JobOffer, { through: JobApplication });
+JobOffer.belongsToMany(JobApplicantAccount, { through: JobApplication });
+JobApplicantAccount.belongsToMany(JobOffer, { through: JobApplication });
+JobApplicantAccount.hasMany(TechnologiesInAccount);
+JobApplicantAccount.belongsTo(User);
 
-Company.hasMany(JobOffer);
+Technologies.hasMany(TechnologiesInAccount);
+
+CompanyAccount.hasMany(JobOffer);
+CompanyAccount.hasMany(User);
 JobApplication.belongsTo(JobOffer);

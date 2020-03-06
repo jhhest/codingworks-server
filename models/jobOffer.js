@@ -2,9 +2,9 @@ const db = require("../db");
 const Sequelize = require("sequelize");
 
 const JobApplication = require("./jobApplication");
-const Company = require("./company");
+const CompanyAccount = require("./companyAccount");
 // const JobOffer = require("./jobOffer");
-const JobApplicant = require("./jobApplicant");
+const JobApplicantAccount = require("./jobApplicantAccount");
 
 const JobOffer = db.define("job_offer", {
   title: {
@@ -18,12 +18,12 @@ const JobOffer = db.define("job_offer", {
 });
 
 JobOffer.hasMany(JobApplication);
-JobOffer.belongsTo(Company);
+JobOffer.belongsTo(CompanyAccount);
 
-JobOffer.belongsToMany(JobApplicant, { through: JobApplication })
-JobApplicant.belongsToMany(JobOffer, { through: JobApplication });
+JobOffer.belongsToMany(JobApplicantAccount, { through: JobApplication })
+JobApplicantAccount.belongsToMany(JobOffer, { through: JobApplication });
 
-Company.hasMany(JobOffer);
+CompanyAccount.hasMany(JobOffer);
 JobApplication.belongsTo(JobOffer);
 
 module.exports = JobOffer;

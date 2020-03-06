@@ -1,12 +1,12 @@
 const { Router } = require("express");
-const Company = require("../models/company");
+const CompanyAccount = require("../models/companyAccount");
 
 const router = new Router();
 
 router.post("/", async (request, response, next) => {
   try {
     console.log("\n---\nTest Companies Endpoint \n---\n");
-    response.json(Company.findAll());
+    response.json(CompanyAccount.findAll());
   } catch (error) {
     next(error);
   }

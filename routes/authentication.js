@@ -2,7 +2,7 @@ const { Router } = require("express");
 const bcrypt = require("bcrypt");
 const { toJWT } = require("../authentication/jwt");
 
-const JobApplicant = require("../models/jobApplicant");
+const JobApplicantAccount = require("../models/jobApplicantAccount");
 
 const router = new Router();
 
@@ -16,7 +16,7 @@ router.post("/login", async (request, response, next) => {
         message: "Not a valid email and password combination"
       });
     }
-    const jobApplicant = await JobApplicant.findOne({ where: { mail } });
+    const jobApplicant = await JobApplicantAccount.findOne({ where: { mail } });
     console.log("value of jobApplicant", jobApplicant);
     if (!jobApplicant) {
       response.status(404).send("User is not found");
