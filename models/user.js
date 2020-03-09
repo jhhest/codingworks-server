@@ -15,8 +15,9 @@ const User = db.define("user", {
         allowNull: false
     }, 
     email: {
-        type: Sequelize.INTEGER,
-        allowNull: false
+        type: Sequelize.TEXT,
+        allowNull: false,
+        unique: true
     }, 
     dateOfBirth: {
         type: Sequelize.DATEONLY,

@@ -1,2 +1,2 @@
-http POST :5000/jobapplicant/new fullName="Henk van Hest" dateOfBirth="1990-12-14" mail="henk@outlook.com" adress="hillekensacker 13-19 Nijmegen" password="password"
-http POST :5000/jobapplicant/new fullName="Jan van Hest" dateOfBirth="1984-12-14" mail="jan@outlook.com" adress="abeelstraat 27 Groesbeek" password="password"
+http POST localhost:5000/user/new firstName="Jan" lastName="van Hest" telephoneNumber=0642091421 email="janvanhest@outlook.com" dateOfBirth="1984-02-15" city="Groesbeek" password="password"
+http POST localhost:5000/user/new firstName="Henk" lastName="van Hest" telephoneNumber=0642123456 email="henk@outlook.com" dateOfBirth="1990-05-27" city="Nijmegen" password="password"
